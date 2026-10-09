@@ -79,7 +79,7 @@ function jsonp(params){
 async function api(body){return body?jsonp({payload:JSON.stringify({...body,key})}):jsonp({key})}
 function say(msg,bad){const u=$("upd");u.textContent=msg;u.style.color=bad?"var(--red)":"";u.style.fontWeight=bad?"900":""}
 async function load(){
-  if(!ENDPOINT.startsWith("http")){say("admin.html の PASTE_APPS_SCRIPT_URL_HERE をURLに置き換えてください",true);return}
+  if(!ENDPOINT.startsWith("http")){say("admin.html の https://script.google.com/macros/s/AKfycbwtjE2G5wKYwi5phw6KQyFJNwzw50chEmNdY8ubqvWpHwnKwHja41rEE2WQFmDm3dMV9Q/exec をURLに置き換えてください",true);return}
   try{
     const j=await api();
     if(!j.ok){if(j.error==="auth")logout("パスワードが違います");else say("読み込めませんでした("+j.error+")",true);return}
