@@ -101,12 +101,12 @@ function setsText(p){const a=p.split("・").filter(Boolean),o=[];for(let i=0;i<a
 function render(){
   const day=orders.filter(o=>o.day===dayF);
   const sum=l=>l.reduce((s,o)=>s+(o.qty||0),0);
-  let html=`<section class="card"><div class="head"><h2>🍙 全日程の合計</h2><span class="meta">${orders.length}件・おにぎり${sum(orders)*2}個・${(sum(orders)*600).toLocaleString()}円</span></div>${orders.length?chips(tally(orders)):'<p class="empty">まだ注文がありません。</p>'}</section>`;
-  html+=`<section class="card"><div class="head"><h2>${dayF} の合計</h2><span class="meta">${day.length}件・おにぎり${sum(day)*2}個・${(sum(day)*600).toLocaleString()}円</span></div>${day.length?chips(tally(day)):'<p class="empty">この日はまだ注文がありません。</p>'}</section>`;
+  let html=`<section class="card"><div class="head"><h2>🍙 全日程の合計</h2><span class="meta">${orders.length}件・おにぎり${sum(orders)*2}個・${(sum(orders)*800).toLocaleString()}円</span></div>${orders.length?chips(tally(orders)):'<p class="empty">まだ注文がありません。</p>'}</section>`;
+  html+=`<section class="card"><div class="head"><h2>${dayF} の合計</h2><span class="meta">${day.length}件・おにぎり${sum(day)*2}個・${(sum(day)*800).toLocaleString()}円</span></div>${day.length?chips(tally(day)):'<p class="empty">この日はまだ注文がありません。</p>'}</section>`;
   TIMES.forEach(t=>{
     const list=day.filter(o=>o.time===t).sort((a,b)=>new Date(a.at)-new Date(b.at));
     const sets=sum(list);
-    html+=`<section class="card"><div class="head"><h2>🕒 ${t} 受け取り</h2><span class="meta">${list.length}件・${sets}セット・おにぎり${sets*2}個・${(sets*600).toLocaleString()}円</span></div>`;
+    html+=`<section class="card"><div class="head"><h2>🕒 ${t} 受け取り</h2><span class="meta">${list.length}件・${sets}セット・おにぎり${sets*2}個・${(sets*800).toLocaleString()}円</span></div>`;
     if(!list.length){html+='<p class="empty">注文なし</p></section>';return}
     html+=chips(tally(list));
     list.forEach(o=>{
