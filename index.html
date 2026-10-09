@@ -121,7 +121,7 @@ dialog input{width:100%;font:inherit;padding:10px;border:2px solid var(--ink);bo
     </div>
     <h3>🕒 受け取り時間を選択</h3>
     <div class="slots" id="slots"></div>
-    <div class="menu-box"><b>おにぎりセット 600円</b>おにぎり2個に唐揚げと卵焼きが付きます。</div>
+    <div class="menu-box"><b>おにぎりセット 800円</b>おにぎり2個に唐揚げと卵焼きが付きます。</div>
     <h3 style="margin-bottom:10px">🍙 おにぎりを選択</h3>
     <div id="picks"></div>
   </section>
@@ -137,7 +137,7 @@ dialog input{width:100%;font:inherit;padding:10px;border:2px solid var(--ink);bo
     </div>
     <div class="total">
       <div>合計金額</div>
-      <div class="amt" id="amt">600円</div>
+      <div class="amt" id="amt">800円</div>
       
     </div>
     <button class="go display" type="button" id="go">🛒 注文する »</button>
@@ -186,7 +186,7 @@ const PRICE=600, MAX=10, LEAD=60;
 const DAYS=[{label:"10/10 DAY1 SATURDAY",date:[2026,10,10]},{label:"10/11 DAY2 SUNDAY",date:[2026,10,11]}];
 const TIMES=["11:00","12:30","13:30","15:00"];
 let day=0, slot=null, qty=1;
-const FLAVORS=["紅鮭","シーチキン","焼きたらこ","明太子","明太マヨ","梅","イカ明太","納豆","ねぎみそ","おかか","チーズ","あさり","混ぜごはん","昆布","高菜","ひじき","ゆかり(カリカリ梅)"];
+const FLAVORS=["紅鮭","シーチキン","焼きたらこ","明太子","明太マヨ","梅","イカ明太","納豆","ねぎみそ","おかか","チーズ","あさり","昆布(混ぜご飯)","高菜(混ぜご飯)","ひじき(混ぜご飯)","ゆかり(カリカリ梅)"];
 const picks=Array(MAX*2).fill("");
 function renderPicks(){
   let s="";
